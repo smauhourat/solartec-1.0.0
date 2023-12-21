@@ -1,7 +1,9 @@
 /********** Template CSS **********/
 :root {
     /* --primary: #32C36C; */
-    --primary: #004a97;
+    /* --primary: #004a97; */
+    --primary: #2774B0;
+    --secondary: #2a9548;
     --light: #F6F7F8;
     --dark: #1A2A36;
 }
@@ -306,7 +308,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary);
+    color: var(--secondary);
     background: #FFFFFF;
     border-radius: 100px;
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
@@ -452,6 +454,15 @@
     justify-content: flex-end;
     background: #FFFFFF;
     transition: .5s;
+}
+
+.team-icon {
+    color: var(--secondary);
+}
+
+.team-icon:hover {
+    color: #FFFFFF;
+    background: var(--primary);
 }
 
 
