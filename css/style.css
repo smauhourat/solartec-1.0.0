@@ -635,3 +635,9 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+
+/*** Section ***/
+.inner-section {
+    margin-top: 100px;
+}

@@ -10,8 +10,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -24,8 +24,8 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -35,7 +35,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -66,17 +66,17 @@
         center: true,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="bi bi-arrow-left"></i>',
             '<i class="bi bi-arrow-right"></i>'
         ],
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             }
         }
     });
@@ -91,8 +91,29 @@
         $("#portfolio-flters li").removeClass('active');
         $(this).addClass('active');
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
+        portfolioIsotope.isotope({ filter: $(this).data('filter') });
     });
-    
+
+
+    $('.nav-link, .navbar-brand').click(function () {
+        var sectionTo = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(sectionTo).offset().top - 75
+        }, 1500);
+    });
+
+    // Activate smooth scroll on page load with hash links in the url
+    $(document).ready(function () {
+        if (window.location.hash) {
+            var initial_nav = window.location.hash;
+            if ($(initial_nav).length) {
+                var scrollto = $(initial_nav).offset().top - 75;
+                $('html, body').animate({
+                    scrollTop: scrollto
+                }, 1500, 'easeInOutExpo');
+            }
+        }
+    });
+
 })(jQuery);
 
